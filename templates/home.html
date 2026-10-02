@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="container">
+  <section class="hero">
+    <p class="eyebrow">MY BLOG</p>
+    <h1>Latest posts</h1>
+    <p class="hero-text">Thoughts, tutorials, and things I'm learning.</p>
+  </section>
+
+  <section class="post-list">
+    <section class="post-list">
+      {% for post in posts %}
+      <article class="post-card">
+        <div class="post-meta">{{ post.date }} · {{ post.duration }} min read</div>
+        <h2><a href="{{ url_for('post_page', post_id=post.id)}}">{{ post.title }}</a></h2>
+        <p>{{ post.lead }}</p>
+        <a class="read-more" href="{{ url_for('post_page', post_id=post.id)}}">Read more →</a>
+      </article>
+      {% endfor %}
+    </section>
+  </section>
+</main>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "layout.html"%}
+{% block content %}
+<article class="post">
+  <a class="back-link" href="{{ url_for('home')}}">← Back to posts</a>
+  <div class="post-meta">{{ post.date }} · {{ post.duration }} min read</div>
+  <h1>{{ title }}</h1>
+
+  <p class="lead">
+    {{ post.lead }}
+  </p>
+</article>
+{% endblock content %}
